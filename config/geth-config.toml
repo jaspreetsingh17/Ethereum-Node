@@ -1,0 +1,72 @@
+# Geth Configuration File
+# Documentation: https://geth.ethereum.org/docs/interface/command-line-options
+
+[Eth]
+NetworkId = 1
+SyncMode = "snap"
+NoPruning = false
+NoPrefetch = false
+TxLookupLimit = 2350000
+DatabaseCache = 4096
+DatabaseFreezer = ""
+TrieCleanCache = 614
+TrieCleanCacheJournal = "triecache"
+TrieCleanCacheRejournal = 3600000000000
+TrieDirtyCache = 256
+TrieTimeout = 3600000000000
+SnapshotCache = 256
+Preimages = false
+FilterLogCacheSize = 32
+EnablePreimageRecording = false
+
+[Eth.Miner]
+GasCeil = 30000000
+GasPrice = 1000000000
+Recommit = 2000000000
+
+[Eth.TxPool]
+Locals = []
+NoLocals = false
+Journal = "transactions.rlp"
+Rejournal = 3600000000000
+PriceLimit = 1
+PriceBump = 10
+AccountSlots = 16
+GlobalSlots = 5120
+AccountQueue = 64
+GlobalQueue = 1024
+Lifetime = 10800000000000
+
+[Node]
+DataDir = "/var/lib/geth"
+IPCPath = "geth.ipc"
+HTTPHost = "127.0.0.1"
+HTTPPort = 8545
+HTTPVirtualHosts = ["localhost"]
+HTTPModules = ["eth", "net", "web3"]
+WSHost = "127.0.0.1"
+WSPort = 8546
+WSModules = ["eth", "net", "web3"]
+GraphQLVirtualHosts = ["localhost"]
+
+[Node.P2P]
+MaxPeers = 50
+NoDiscovery = false
+StaticNodes = []
+TrustedNodes = []
+ListenAddr = ":30303"
+EnableMsgEvents = false
+
+[Node.HTTPTimeouts]
+ReadTimeout = 30000000000
+WriteTimeout = 30000000000
+IdleTimeout = 120000000000
+
+[Metrics]
+HTTP = "127.0.0.1"
+Port = 6060
+InfluxDBEndpoint = "http://localhost:8086"
+InfluxDBDatabase = "geth"
+InfluxDBUsername = "test"
+InfluxDBPassword = "test"
+InfluxDBTags = "host=localhost"
