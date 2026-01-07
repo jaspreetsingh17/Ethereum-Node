@@ -37,7 +37,7 @@ This repository provides everything needed to run a full Ethereum node using Get
 ## Quick Start
 
 ```bash
-git clone https://github.com/your-username/ethereum-geth-node.git
+git clone https://github.com/jaspreetsingh17/Ethereum-Node.git
 cd ethereum-geth-node
 chmod +x scripts/install.sh
 ./scripts/install.sh
